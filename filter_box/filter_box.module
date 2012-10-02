@@ -1,0 +1,30 @@
+<?php
+
+function filter_box_form_alter(&$form, &$form_state, $form_id) {
+    if ($form_id == 'system_modules') {
+        $form['filter_box'] = array(
+            '#id' => 'filter_box',
+            '#type' => 'textfield',
+            '#weight' => -1,
+            '#attributes' => array(
+                'placeholder' => 'Type Module Nmae to filter modules',
+                'style' => 'width: 200px',
+            ),
+        );
+        $js = <<<EOJ
+jQuery(document).ready(function($) {
+    $('#filter_box').keyup(function(key) {
+        var re = new RegExp(this.value, 'i');
+        $('tr label strong').each(function() {
+            if (this.innerHTML.match(re)) {
+                $(this).parents('tr').show();
+            } else {
+                $(this).parents('tr').hide();
+            }
+        });
+    });
+});
+EOJ;
+        drupal_add_js($js, array('type' => 'inline'));
+    }
+}

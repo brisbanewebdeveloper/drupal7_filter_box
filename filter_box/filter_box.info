@@ -1,0 +1,5 @@
+name = Filter Box
+description = To put the filter box on Modules page at Admin area.
+package = Administration
+core = 7.x
+files[] = filter_box.module
