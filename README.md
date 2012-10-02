@@ -1,4 +1,4 @@
-drupal7_filter_box
+Filter Box Module
 ==================
 
-To put the filter box on Modules page at Admin area.
+This Drupal module put a filter box on Modules page at Admin area to let you find a module easier.
