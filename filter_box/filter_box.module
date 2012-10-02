@@ -22,7 +22,8 @@ jQuery(document).ready(function($) {
                 $(this).parents('tr').hide();
             }
         });
-    });
+    })
+    .focus();
 });
 EOJ;
         drupal_add_js($js, array('type' => 'inline'));
